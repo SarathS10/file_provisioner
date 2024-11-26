@@ -1,8 +1,9 @@
 
 resource "aws_security-group" "SG" {
  vpc_id = aws_vpc.main.id
- subnet_id= "subnet-03d653835a3584bbf"
-  name = "Nan"
+  tags ={
+    name = "Nan"
+  }
   ingress {
     from_port = "22"
     to_port = "22"
