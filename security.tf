@@ -1,12 +1,4 @@
-resource "aws_vpc" "main" {
-  cidr_block       = "10.0.0.0/16"
-  instance_tenancy = "default"
-
-  tags = {
-    Name = "main"
-  }
-resource "aws_security_group" "secure" {
- vpc_id = aws_vpc.main.id
+resource "aws_security_group" "my-sg" {
   tags ={
     name = "Nan"
   }
@@ -37,17 +29,8 @@ resource "aws_security_group" "secure" {
     cidr_blocks = ["0.0.0.0/0"]
 
   }
-resource "aws_subnet" "PUB" {
-vpc_id = aws_vpc.main.id
-cidr_block = "10.0.1.0/24"
-tags = {
-Name = "MySubnet"
-}
 
 }
-}
-}
-
 #dksksdd
 
  
