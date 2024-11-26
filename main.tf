@@ -8,6 +8,7 @@
   tags ={
     Name = "sarath"
   }
+  #dd
   
 provisioner "file" {
   source = "apps/file.html"
