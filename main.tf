@@ -2,7 +2,7 @@
   ami = data.aws_ami.ami19.id
   instance_type = var.instance_type
   vpc_security_group_ids =[aws_security_group.my-sg.id]
-  key_name = "pem_key"
+  key_name = "key_sar"
   user_data = file("nginx-install.sh")
   tags ={
     Name = "sarath"
@@ -33,7 +33,7 @@ connection {
     type = "ssh"
     user = "ec2-user"
     host = self.public_ip
-    private_key = file("private-key/pem_key.pem")
+    private_key = file("private-key/key_sar.pem")
   }  
   }
 
