@@ -4,5 +4,5 @@ output "ins_id" {
 }
 output "sg_id" {
   description = "security of ID"
-  value       = resource.aws_security_group.Sarath1.id
+  value       = resource.aws_security_group.secure.id
 }
