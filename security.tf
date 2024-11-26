@@ -1,6 +1,12 @@
+resource "aws_vpc" "main" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
 
+  tags = {
+    Name = "main"
+  }
 resource "aws_security_group" "secure" {
- vpc_id = aws_vpc.sarvpc.id
+ vpc_id = aws_vpc.main.id
   tags ={
     name = "Nan"
   }
@@ -32,17 +38,11 @@ resource "aws_security_group" "secure" {
 
   }
 resource "aws_subnet" "PUB" {
-vpc_id = aws_vpc.sarvpc.id
+vpc_id = aws_vpc.main.id
 cidr_block = "10.0.1.0/24"
 tags = {
 Name = "MySubnet"
 }
-
-resource "aws_vpc" "sarvpc" {
-  cidr_block   = "10.0.0.0/16"
-  tags = {
-    Name = "vpc"
-  }
 
 }
 }
