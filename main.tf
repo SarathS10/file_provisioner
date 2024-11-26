@@ -1,8 +1,8 @@
   resource "aws_instance" "my_ec2" {
   ami = data.aws_ami.ami19.id
   instance_type = var.instance_type
-  vpc_security_group_ids =[aws_security_group.SG.id]
-  subnet_id = aws_subnet.subnet1.id
+  vpc_security_group_ids =[aws_security_group.sarath1.id]
+  subnet_id = aws_subnet.PUB.id
   key_name = "pem_key"
   user_data = file("nginx-install.sh")
   tags ={
