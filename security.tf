@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "sarath1" {
- vpc_id = aws_vpc.main.id
+ vpc_id = aws_vpc.sara.id
   tags ={
     name = "Nan"
   }
@@ -31,14 +31,14 @@ resource "aws_security_group" "sarath1" {
     cidr_blocks = ["0.0.0.0/0"]
 
   }
-resource "aws_subnet" "PUB" {
+ resource "aws_subnet" "PUB" {
 vpc_id = aws_vpc.main.id
 cidr_block = "10.0.1.0/24"
 tags = {
 Name = "MySubnet"
 }
 
-resource "aws_vpc" "main" {
+resource "aws_vpc" "sara" {
   cidr_block   = "10.0.0.0/16"
   tags = {
     Name = "vpc"
