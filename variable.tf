@@ -5,5 +5,5 @@ variable "instance_type" {
 variable "location" {
   type = string
   default = "us-east-2"
-}
+}#jfjd
 
